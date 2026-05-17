@@ -15,8 +15,8 @@ export function computedSignal<T>(fn: () => T): Signal<T> {
     },
     subscribe: (callback: () => void) => {
       effect(() => {
-        c.get(); // track dependencies
-        callback(); // notify React
+        c.get();
+        callback();
       });
 
       return () => {
